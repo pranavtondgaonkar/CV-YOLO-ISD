@@ -2,20 +2,17 @@
 
 ## Problem Statement
 
-Considering the hazardous nature of work in various industries and the increase in neglect of safety standards. Organizations and Governments have implemented rules and guidelines for the labours working in these sectors (Construction, Mining, Heavy Metal industries, etc.) to decrease the probability of injury and accidents.
-This app detects the safety gear worn by the workers to recognize if the safety standards are followed.
+To Develop a detection system that uses computer vision and machine learning to monitor, track, and enforce employees/workers to wear safety gear. 
 
-## Solution
+## Proposed Solution
+This app will develop an Industry Safety Detection (ISD) designed and modeled to take a real-time image of the personnel as input and determine whether or not the five segments - helmet, gloves, jacket, goggles, and footwear - are worn before entering the workplace, as well as record the procedures. The app is developed in the following steps:
+1. Data Collection: [Kaggle]((https://www.kaggle.com/datasets/andrewmvd/hard-hat-detection))
+2. Preprocess the data for training
+3. Train a YOLOv7 model to perform object detection in images
+4. Create a web app using Flask
+5. Deploy on AWS cloud
 
-This app will use computer vision and machine learning to detect and force the workers to wear the necessary protection gear while entering the workspace. The model will take a real-time image and determine if 5 objects (Helmet, Gloves, Jacket, Goggles, footwear) are detected in the image. If those are absent a prohibition alarm will be triggered.
-
-The CV-YOLO-ISD project leverages the YOLO (You Only Look Once) model to perform object detection in images. The application is built using Flask and provides endpoints for training the model and performing object detection on input images.
-
-- **Training**: The application has a training pipeline in place, which can be triggered via the `/train` endpoint. This pipeline is designed to train the YOLO model on a dataset of images.
-
-- **Prediction**: The `/predict` endpoint allows users to input an image and receive the processed image with detected objects highlighted.
-
-## How to Run the Code
+## How to Run the Code locally
 
 1. **Setup**: Install the required packages:
    ```bash
@@ -23,5 +20,5 @@ The CV-YOLO-ISD project leverages the YOLO (You Only Look Once) model to perform
    ```
 2. **Run the Application**: Execute the main application file:
    ```bash
-   pip install -r requirements.txt
+   python app.py
    ```
